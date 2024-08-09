@@ -17,12 +17,12 @@ exclude:
 - CNAME
 - Gemfile
 - Gemfile.lock
+- garth-jekyll-theme.gemspec
 
 # 2. Installed Gems
 plugins:
 - jekyll-paginate
 - jekyll-remote-theme
-- tzinfo
 
 # 3. Gem settings
 paginate: 2 # jekyll-paginate > items per page
