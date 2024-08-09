@@ -1,4 +1,4 @@
 source "https://rubygems.org"
 gemspec
-gem "garth-jekyll-theme"
-gem "tzinfo"
+gem "jekyll-remote-theme"
+gem "tzinfo-data"
