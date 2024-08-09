@@ -8,15 +8,15 @@ The second most common web application vulnerability according to the Open Web A
 
 
 
-The specific vulnerability that maps onto this category, and the one I would like to illustrate today is “Use of Weak Hash” ​[3](#3)​. In a word, the vulnerability of a weak hash originates in its inability to prevent an attacker from determining the original input once the function has been applied to it.
+The specific vulnerability that maps onto this category, and the one I would like to illustrate in this article is “Use of Weak Hash” ​[3](#3)​. In a word, the vulnerability of a weak hash originates in its inability to prevent an attacker from determining the original input once the function has been applied to it.
 
 
 
-As the CWE (Common Weakness Enumeration) states, a hashing algorithm takes a value of arbitrary size and maps it onto a fixed-size output such that the output is irreversible, and the same input produces the same output every time, making it deterministic. The cryptographic strength of the hash function bases itself on its deterrence against determining the original value from the output (preimage attack), determining an input that can produce the same output as another input (second preimage attack), or multiple inputs producing the same output (birthday attack).  
+As the Common Weakness Enumeration (CWE) states, a hashing algorithm takes a value of arbitrary size and maps it onto a fixed-size output such that the output is irreversible, and the same input produces the same output every time, making it deterministic. The cryptographic strength of the hash function bases itself on its deterrence against determining the original value from the output (preimage attack), determining an input that can produce the same output as another input (second preimage attack), or multiple inputs producing the same output (birthday attack).  
 
 
 
-Unfortunately, the infinite number of inputs paired with the finite permutations that can fit within our fixed-size output makes it a guarantee that an input will no longer map to a unique output, and a “collision” will occur. The mathematical impossibility of a collision-free hash function means that it is inevitable a collision attack will occur in time, and one of the most well-known instances of this is with the MD5 algorithm ​ [4](#4) .
+Unfortunately, the infinite number of inputs paired with the finite permutations that can fit within our fixed-size output makes it a guarantee that with time an input will no longer map to a unique output, and a “collision” will occur. The mathematical impossibility of a collision-free hash function means that it is inevitable a collision attack will occur eventually, and one of the most widely-known instances of this is with the MD5 algorithm ​ [4](#4) .
 
 
 
@@ -24,23 +24,11 @@ The MD5 message-digest algorithm, devised in 1991, effectively became obsolescen
 
 
 
-Because one of the most common applications of hashing algorithms is password hashing, unauthorised access can lead to data breach, financial losses, and so on.  
-
-
-
-
-
-To clarify, a hashing function is cryptographic, but not “encryption” as such.  
-
-The issue with MD5-based hashing algorithms is it makes it determinable, “cryptographically broken”
+Because one of the most common applications of hashing algorithms is password hashing, unauthorised access could lead to data breach, financial losses, exposure of sensitive data, and so on, impacting everyone from individual users to international corporations and governmental organisations. For less security-intensive uses, such an algorithm could suffice, which is why MD5 is still about in the case of authenticating digital signatures or downloads via a checksum for example. The solution henceforth has been the implementation of increasingly stronger algorithms such as SHA-256, which produces a hash value twice as big and therefore yields a higher collision resistance.
 
 
 ## Practical ##
-In the following PortSwigger exercise, there is an example of an MD5-based hashing algorithm which is  
-
-
-
-To do this, let’s do a PortSwigger exercise. ​[4](#4)
+In the following PortSwigger exercise, there is an example of an MD5-based hashing algorithm which is being used to store passwords in a way that is inappropriate for the context. How this is inappropriate will quickly become apparent as we walkthrough it. ​[4](#4)
 
 ![wiener login]({{site.baseurl}}/assets/images/Picture20.png)
 
