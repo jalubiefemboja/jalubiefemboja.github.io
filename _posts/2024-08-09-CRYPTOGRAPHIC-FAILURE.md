@@ -33,7 +33,7 @@ In the following PortSwigger exercise, there is an example of an MD5-based hashi
 ![wiener login]({{site.baseurl}}/assets/images/Picture20.png)
 
 
-When we select “Stay logged in”, we see our selection reflected in the "Cookie" header in the subsequent HTTP request. Briefly, an HTTP cookie is a “small piece of data that a server sends to a user’s web browser”​ [5]​ to identify them, record choices and apply their preferences to a web session. Once a cookie is created, a specific user’s preferences or session information e.g. view history, shopping basket, so on, will be remembered for as long as the cookie lasts – in this case, their “stay-logged-in” status.
+When we select “Stay logged in”, we see our selection reflected in the "Cookie" header in the subsequent HTTP request. Briefly, an HTTP cookie is a “small piece of data that a server sends to a user’s web browser”​ [5](#5)​ to identify them, record choices and apply their preferences to a web session. Once a cookie is created, a specific user’s preferences or session information e.g. view history, shopping basket, so on, will be remembered for as long as the cookie lasts – in this case, their “stay-logged-in” status.
 
 ![wiener login]({{site.baseurl}}/assets/images/Picture19.png)
 
